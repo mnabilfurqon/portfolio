@@ -96,15 +96,14 @@ const AboutSection = () => {
               Saya mulai masuk ke dunia <b>pengembangan web</b> pada tahun{" "}
               <b>2023</b> dan sejak itu telah mengembangkan berbagai{" "}
               <b>proyek web</b> menggunakan teknologi seperti <b>HTML</b>,{" "}
-              <b>CSS</b>, <b>JavaScript</b>, <b>ReactJS</b> 🚀 serta beberapa
+              <b>CSS</b>, <b>JavaScript</b>, <b>ReactJS</b>🚀serta beberapa
               library pendukung lainnya. Salah satu alasan saya menyukai{" "}
               <b>pengembangan web</b> adalah karena saya dapat melihat hasil
               kerja saya secara langsung di browser 💻, yang memberikan{" "}
               <b>kepuasan tersendiri</b>. Saat ini saya sedang belajar lebih
-              dalam tentang <b>Backend Development</b>
-              📊untuk memperluas kemampuan saya, karena capaian saya adalah
-              menjadi seorang <b>Full Stack Developer</b> yang <b>kompeten</b>{" "}
-              ⭐.
+              dalam tentang <b>Backend Development</b> 📊 untuk memperluas
+              kemampuan saya, karena capaian saya adalah menjadi seorang <b>Full
+              Stack Developer</b> yang <b>kompeten</b> ⭐.
             </p>
 
             <div className="mt-6 md:mt-8">

@@ -5,7 +5,7 @@ const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
   const [modalImage, setModalImage] = useState<string | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); // NEW
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -88,8 +88,8 @@ const ProjectsSection = () => {
                 onMouseEnter={() => !isTouchDevice && setActiveIndex(index)}
                 onMouseLeave={() => !isTouchDevice && setActiveIndex(null)}
                 onClick={() => {
-                  if (isTouchDevice) {
-                    setActiveIndex(isActive ? null : index);
+                  if (isTouchDevice && !isActive) {
+                    setActiveIndex(index);
                   }
                 }}
               >
@@ -110,6 +110,31 @@ const ProjectsSection = () => {
                         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%236b7280'%3EImage not found%3C/text%3E%3C/svg%3E";
                     }}
                   />
+                  {isTouchDevice ? (
+                    isActive ? (
+                      <button
+                        className="absolute bottom-3 left-3 bg-gradient-to-r from-[#FF5EF7] to-[#02F5FF] text-white px-3 py-1 rounded-full shadow-lg text-xs font-semibold transition z-30"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveIndex(null);
+                        }}
+                        type="button"
+                      >
+                        Close
+                      </button>
+                    ) : (
+                      <button
+                        className="absolute bottom-3 left-3 bg-gradient-to-r from-[#FF5EF7] to-[#02F5FF] text-white px-3 py-1 rounded-full shadow-lg text-xs font-semibold transition z-30"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveIndex(index);
+                        }}
+                        type="button"
+                      >
+                        View Details
+                      </button>
+                    )
+                  ) : null}
                   <button
                     className={`absolute bottom-3 right-3 bg-gradient-to-r from-[#FF5EF7] to-[#02F5FF] text-white px-3 py-1 rounded-full shadow-lg text-xs font-semibold transition ${
                       isActive ? "hover:scale-105 z-30" : "z-30"
@@ -123,7 +148,6 @@ const ProjectsSection = () => {
                     View Full Image
                   </button>
                 </div>
-                {/* Overlay hanya muncul jika isActive */}
                 <div
                   className={`absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-br from-[#18182f]/80 via-[#23234b]/70 to-[#0f3460]/60 transition-opacity duration-700 p-6 ${
                     isActive
