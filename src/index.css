@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  --color-primary-50: rgb(254, 242, 255);
+  --color-primary-100: rgb(253, 230, 255);
+  --color-primary-200: rgb(253, 204, 255);
+  --color-primary-300: rgb(252, 163, 255);
+  --color-primary-400: rgb(250, 106, 255);
+  --color-primary-500: rgb(255, 94, 247);
+  --color-primary-600: rgb(230, 50, 219);
+  --color-primary-700: rgb(196, 31, 179);
+  --color-primary-800: rgb(161, 28, 146);
+  --color-primary-900: rgb(133, 30, 118);
+  --color-primary-950: rgb(87, 10, 77);
+
+  --color-secondary-50: rgb(236, 255, 255);
+  --color-secondary-100: rgb(207, 255, 253);
+  --color-secondary-200: rgb(165, 255, 252);
+  --color-secondary-300: rgb(103, 255, 249);
+  --color-secondary-400: rgb(34, 248, 240);
+  --color-secondary-500: rgb(2, 245, 255);
+  --color-secondary-600: rgb(0, 188, 199);
+  --color-secondary-700: rgb(5, 149, 159);
+  --color-secondary-800: rgb(12, 118, 129);
+  --color-secondary-900: rgb(15, 98, 108);
+  --color-secondary-950: rgb(2, 63, 73);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #FF5EF7 0%, #02F5FF 100%);
+}
+
+.bg-gradient-primary-reverse {
+  background: linear-gradient(135deg, #02F5FF 0%, #FF5EF7 100%);
+}
+
+.bg-gradient-radial-primary {
+  background: radial-gradient(ellipse at center, #FF5EF7 0%, #02F5FF 100%);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(26, 26, 46);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgb(255, 94, 247) 0%, rgb(2, 245, 255) 100%);
+  border-radius: 10px;
+  border: 2px solid rgb(26, 26, 46);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgb(230, 50, 219) 0%, rgb(0, 188, 199) 100%);
+  box-shadow: 0 0 10px rgba(255, 94, 247, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgb(26, 26, 46);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 94, 247) rgb(26, 26, 46);
+}
