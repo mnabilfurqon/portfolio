@@ -70,6 +70,8 @@ const ContactSection = () => {
         from_name: form.name,
         from_email: form.email,
         message: form.message,
+        name: form.name,
+        email: form.email,
         },
         import.meta.env.VITE_EMAILJS_USER_ID
       ).then(() => {
